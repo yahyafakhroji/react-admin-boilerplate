@@ -1,8 +1,8 @@
-export const DRAWER_WIDTH = 280;
+export const DRAWER_WIDTH = 275;
 
 export const MINI_DRAWER_WIDTH = 90;
 
-export const HEADER_HEIGHT = 74;
+export const HEADER_HEIGHT = 60;
 
 export const THEME_CONFIGS: any = {
   fontFamily: `Inter var`,

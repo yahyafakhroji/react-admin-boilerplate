@@ -1,3 +1,4 @@
+import DrawerContent from '@components/ui/drawer/drawer-content.component';
 import DrawerHeader from '@components/ui/drawer/drawer-header.component';
 import DrawerMini from '@components/ui/drawer/drawer-mini.component';
 import { DRAWER_WIDTH } from '@config';
@@ -21,7 +22,7 @@ const Drawer: React.FC<Props> = ({ open, handleDrawerToggle }) => {
       {!downLG ? (
         <DrawerMini variant="permanent" open={open}>
           <DrawerHeader open={open} />
-          {drawerContent}
+          <DrawerContent />
         </DrawerMini>
       ) : (
         <MuiDrawer
@@ -42,7 +43,7 @@ const Drawer: React.FC<Props> = ({ open, handleDrawerToggle }) => {
           }}
         >
           <DrawerHeader open={open} />
-          {drawerContent}
+          <DrawerContent />
         </MuiDrawer>
       )}
     </Box>

@@ -1,6 +1,6 @@
 import { getColors, getShadow } from '@helper/utils.helper';
 import { ButtonVariantProps, ExtendedStyleProps, IconButtonShapeProps } from '@themes/types';
-import React, { forwardRef, ReactNode, ReactChild, ReactFragment, ReactPortal, Ref } from 'react';
+import React, { forwardRef, ReactNode, Ref } from 'react';
 
 // material-ui
 import MuiIconButton from '@mui/material/IconButton';
@@ -13,7 +13,7 @@ interface IconButtonStyleProps extends ExtendedStyleProps {
   variant?: ButtonVariantProps;
 }
 
-function getColorStyle({ variant, theme, color }: IconButtonStyleProps) {
+const getColorStyle = ({ variant, theme, color }: IconButtonStyleProps) => {
   const colors = getColors(theme, color);
   const { lighter, light, dark, main, contrastText } = colors;
 
@@ -91,7 +91,7 @@ function getColorStyle({ variant, theme, color }: IconButtonStyleProps) {
         ...commonShadow,
       };
   }
-}
+};
 
 // ==============================|| ICON BUTTON - STYLED ||============================== //
 

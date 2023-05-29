@@ -1,19 +1,41 @@
 import Drawer from '@components/ui/drawer/drawer.component';
 import Header from '@components/ui/header/header.component';
 import { DRAWER_WIDTH, THEME_CONFIGS } from '@config';
-import { Box, Toolbar, Container } from '@mui/material';
-import React, { useState } from 'react';
+import { useAtomic } from '@libraries/state';
+import { Box, Toolbar, Container, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { drawerAtom } from '@states/atoms/util.atom';
+import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import style from './style.module.scss';
 
 const MainLayout: React.FC = () => {
-  const [open, setOpen] = useState(true);
-  const { container } = THEME_CONFIGS;
+  const theme = useTheme();
+  const matchDownLG = useMediaQuery(theme.breakpoints.down('xl'));
+
+  const { container, miniDrawer } = THEME_CONFIGS;
+
+  const [drawerOpen, setDrawerOpen] = useAtomic(drawerAtom);
+
+  const [open, setOpen] = useState(!miniDrawer || drawerOpen);
 
   const handleDrawerToggle = () => {
-    setOpen(!open)
+    setOpen(!open);
+    setDrawerOpen(!open);
   };
+
+  // set media wise responsive drawer
+  useEffect(() => {
+    if (!miniDrawer) {
+      setOpen(!matchDownLG);
+      setDrawerOpen(!matchDownLG);
+    }
+  }, [matchDownLG]);
+
+  useEffect(() => {
+    if (open !== drawerOpen) setOpen(drawerOpen);
+  }, [drawerOpen]);
 
   return (
     <Box className={style.main}>

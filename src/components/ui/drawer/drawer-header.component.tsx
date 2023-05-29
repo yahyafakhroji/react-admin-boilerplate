@@ -1,3 +1,4 @@
+import Logo from '@components/ui/logo/logo.component';
 import { HEADER_HEIGHT } from '@config';
 import { useTheme, Box } from '@mui/material';
 import { styled, Theme } from '@mui/material/styles';
@@ -36,7 +37,7 @@ const DrawerHeader: React.FC<{ open: boolean }> = ({ open }) => {
         paddingLeft: open ? '24px' : 0,
       }}
     >
-      MOLLA
+      <Logo isIcon={!open} sx={{ width: open ? 'auto' : 52, height: 'auto' }} />
     </DrawerHeaderStyled>
   );
 };
