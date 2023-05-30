@@ -1,5 +1,5 @@
 import AppBarStyled from '@components/ui/app-bar/app-bar-styled.component';
-import IconButton from '@components/ui/icon-button/icon-button.component';
+import IconButton from '@components/ui/button/icon-button.component';
 import UserDropdown from '@components/ui/user-dropdown/user-dropdown.component';
 import { DRAWER_WIDTH, MINI_DRAWER_WIDTH } from '@config';
 import { alpha, AppBar, AppBarProps, Box, Toolbar, useMediaQuery, useTheme } from '@mui/material';

@@ -10,8 +10,6 @@ import { drawerAtom } from '@states/atoms/util.atom';
 import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import style from './style.module.scss';
-
 const MainLayout: React.FC = () => {
   const theme = useTheme();
   const matchDownLG = useMediaQuery(theme.breakpoints.down('xl'));
@@ -40,7 +38,7 @@ const MainLayout: React.FC = () => {
   }, [drawerOpen]);
 
   return (
-    <Box className={style.main}>
+    <Box sx={{ display: 'flex', width: '100%' }}>
       <Header open={open} handleDrawerToggle={handleDrawerToggle} />
       <Drawer open={open} handleDrawerToggle={handleDrawerToggle} />
 

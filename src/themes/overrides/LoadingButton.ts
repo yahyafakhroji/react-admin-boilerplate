@@ -14,12 +14,12 @@ export default function LoadingButton() {
           '&.MuiLoadingButton-loading': {
             opacity: 0.6,
             textShadow: 'none',
-            '& .MuiLoadingButton-loadingIndicatorStart': {
-              left: 12,
-            },
-            '& .MuiLoadingButton-loadingIndicatorEnd': {
-              right: 12,
-            },
+            // '& .MuiLoadingButton-loadingIndicatorStart': {
+            //   left: 12,
+            // },
+            // '& .MuiLoadingButton-loadingIndicatorEnd': {
+            //   right: 12,
+            // },
           },
         },
       },

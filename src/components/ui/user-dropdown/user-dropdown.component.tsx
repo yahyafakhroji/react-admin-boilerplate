@@ -1,5 +1,5 @@
 import MainCard from '@components/ui/card/main-card.component';
-import IconButton from '@components/ui/icon-button/icon-button.component';
+import IconButton from '@components/ui/button/icon-button.component';
 import Transitions from '@components/ui/transitions/transitions.component';
 import ProfileMenu from '@components/ui/user-dropdown/profile-menu.component';
 import {

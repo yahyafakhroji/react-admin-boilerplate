@@ -1,6 +1,8 @@
 /*  eslint-disable react/react-in-jsx-scope */
 import { NavItemType } from '@components/ui/navigation/navigation.types';
+import AuthLayout from '@layouts/auth/auth.layout';
 import MainLayout from '@layouts/main/main.layout';
+import LoginPage from '@pages/auth/login';
 import TestPage from '@pages/test';
 import { Calendar1, KyberNetwork, Messages2 } from 'iconsax-react';
 import { RouteObject } from 'react-router-dom';
@@ -8,12 +10,27 @@ import { RouteObject } from 'react-router-dom';
 export const routes = [
   {
     path: '/',
-    element: <MainLayout />,
     children: [
       {
         path: '/',
-        index: true,
-        element: <TestPage />,
+        element: <MainLayout />,
+        children: [
+          {
+            path: '/',
+            element: <TestPage />,
+          },
+        ],
+      },
+      {
+        path: 'auth',
+        element: <AuthLayout />,
+        children: [
+          {
+            path: 'login',
+            index: true,
+            element: <LoginPage />,
+          },
+        ],
       },
     ],
   },
