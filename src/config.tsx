@@ -13,5 +13,5 @@ export const THEME_CONFIGS: any = {
   mode: 'light',
   presetColor: 'default',
   themeDirection: 'ltr',
-  themeContrast: false,
+  themeContrast: true,
 };

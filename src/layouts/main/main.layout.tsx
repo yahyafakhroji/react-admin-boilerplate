@@ -1,9 +1,11 @@
+import Breadcrumbs from '@components/ui/breadcrumbs/breadcrumbs.component';
 import Drawer from '@components/ui/drawer/drawer.component';
 import Header from '@components/ui/header/header.component';
 import { DRAWER_WIDTH, THEME_CONFIGS } from '@config';
 import { useAtomic } from '@libraries/state';
 import { Box, Toolbar, Container, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { menus } from '@routes';
 import { drawerAtom } from '@states/atoms/util.atom';
 import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
@@ -55,6 +57,7 @@ const MainLayout: React.FC = () => {
             flexDirection: 'column',
           }}
         >
+          <Breadcrumbs navigation={menus} title titleBottom card={false} divider={false} />
           <Outlet />
         </Container>
       </Box>

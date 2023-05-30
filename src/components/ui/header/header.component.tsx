@@ -1,7 +1,9 @@
 import AppBarStyled from '@components/ui/app-bar/app-bar-styled.component';
 import IconButton from '@components/ui/icon-button/icon-button.component';
+import UserDropdown from '@components/ui/user-dropdown/user-dropdown.component';
 import { DRAWER_WIDTH, MINI_DRAWER_WIDTH } from '@config';
-import { alpha, AppBar, AppBarProps, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import { alpha, AppBar, AppBarProps, Box, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import { Theme } from '@mui/material/styles';
 import { HambergerMenu } from 'iconsax-react';
 import React from 'react';
 
@@ -14,6 +16,8 @@ const MainHeader: React.FC<Props> = ({ open, handleDrawerToggle }) => {
   const theme = useTheme();
   const iconBackColorOpen = theme.palette.mode === 'dark' ? 'secondary.200' : 'secondary.200';
   const iconBackColor = theme.palette.mode === 'dark' ? 'background.default' : 'secondary.100';
+
+  const downLG = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'));
 
   return (
     <Toolbar sx={{ px: { xs: 2, sm: 4.5, lg: 8 } }}>
@@ -28,7 +32,9 @@ const MainHeader: React.FC<Props> = ({ open, handleDrawerToggle }) => {
       >
         <HambergerMenu />
       </IconButton>
-      {/* {headerContent} */}
+      {!downLG && <Box sx={{ width: '100%', ml: { xs: 0, md: 2 } }} />}
+      {downLG && <Box sx={{ width: '100%', ml: 1 }} />}
+      {!downLG && <UserDropdown />}
     </Toolbar>
   );
 };

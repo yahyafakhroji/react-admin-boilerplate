@@ -57,8 +57,8 @@ export const ThemeCustomProvider: React.FC<ThemeCustomizationProps> = ({ childre
       mixins: {
         toolbar: {
           minHeight: HEADER_HEIGHT,
-          paddingTop: 8,
-          paddingBottom: 8,
+          paddingTop: 12,
+          paddingBottom: 12,
         },
       },
       palette: theme.palette,

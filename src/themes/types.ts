@@ -2,6 +2,11 @@
 import { Theme } from '@mui/material/styles';
 import { ButtonProps, ChipProps, IconButtonProps, SliderProps } from '@mui/material';
 import { LoadingButtonProps } from '@mui/lab';
+import { ReactNode } from 'react';
+
+export type KeyedObject = {
+  [key: string]: string | number | KeyedObject | any;
+};
 
 // ==============================|| TYPES - EXTENDED COMPONENT  ||============================== //
 
@@ -31,3 +36,10 @@ export type ExtendedStyleProps = {
   color: ColorProps;
   theme: Theme;
 };
+
+export interface TabPanelProps {
+  children?: ReactNode;
+  dir?: string;
+  index: number;
+  value: number;
+}

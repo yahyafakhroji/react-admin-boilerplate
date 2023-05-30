@@ -44,10 +44,8 @@ const Palette = (mode: PaletteMode, themeContrast: boolean) => {
       action: {
         disabled: paletteColor.secondary.light,
       },
-      divider:
-        mode === 'dark' && paletteColor.secondary.darker
-          ? alpha(paletteColor.secondary.darker, 0.05)
-          : alpha(paletteColor.secondary.main, 0.65),
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      divider: mode === 'dark' ? alpha(paletteColor.secondary.darker!, 0.05) : alpha(paletteColor.secondary.light!, 0.65),
       background: {
         paper: mode === 'dark' ? paletteColor.secondary[100] : '#fff',
         default: themeContrast && mode !== 'dark' ? '#fff' : paletteColor.secondary.lighter,

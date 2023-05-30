@@ -28,11 +28,11 @@ const CustomShadows = (theme: Theme): CustomShadowProps => ({
   text: `0 -1px 0 rgb(0 0 0 / 12%)`,
   z1:
     theme.palette.mode === 'dark'
-      ? `0px 8px 24px ${alpha(theme.palette.secondary[200] ?? theme.palette.secondary.main, 0.3)}`
+      ? `0px 8px 24px ${alpha(theme.palette.secondary[200]!, 0.3)}`
       : `0px 8px 24px  ${alpha(theme.palette.secondary.darker, 0.08)}`,
   z2:
     theme.palette.mode === 'dark'
-      ? `0px 2px 8px ${alpha(theme.palette.secondary[200] ?? theme.palette.secondary.main, 0.3)}`
+      ? `0px 2px 8px ${alpha(theme.palette.secondary[200]!, 0.3)}`
       : `0px 2px 8px  ${alpha(theme.palette.secondary.darker, 0.08)}`,
   primary: `0 0 0 2px ${alpha(theme.palette.primary.main, 0.1)}`,
   secondary: `0 0 0 2px ${alpha(theme.palette.secondary.main, 0.2)}`,
